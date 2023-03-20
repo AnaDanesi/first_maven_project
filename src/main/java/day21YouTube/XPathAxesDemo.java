@@ -30,5 +30,11 @@ public class XPathAxesDemo {
         List<WebElement> childs=driver.findElements(By.xpath("//a[normalize-space()='Data Patterns (India']/ancestor::tr/child::td"));
         System.out.println("Number of child element:  "+ childs.size()); //Number of child element : 5
 
+        //ancestor
+        text=driver.findElement(By.xpath("//a[normalize-space()='Data Patterns (India']/ancestor::tr")).getText();
+        System.out.println(text); //Data Patterns (India A 1,350.20 1,417.00 + 4.95 (it brings all the data of the row because it doesnt have any text
+
+
+
     }
 }
