@@ -3,7 +3,10 @@ package day21YouTube;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.List;
 
 public class XPathAxesDemo {
 
@@ -17,12 +20,15 @@ public class XPathAxesDemo {
 
         //self
         String text=driver.findElement(By.xpath("//a[normalize-space()='Data Patterns (India']/self::a")).getText();
-        System.out.println(text);
+        System.out.println(text); //Data Patterns (India
 
         //parent
         text= driver.findElement(By.xpath("//a[normalize-space()='Data Patterns (India']/parent::td")).getText();
-        System.out.println(text);
+        System.out.println(text); //Data Patterns (India
 
+        //child (actually our self node doesnt have a child, so we use the ancestor to go down
+        List<WebElement> childs=driver.findElements(By.xpath("//a[normalize-space()='Data Patterns (India']/ancestor::tr/child::td"));
+        System.out.println("Number of child element:  "+ childs.size()); //Number of child element : 5
 
     }
 }
