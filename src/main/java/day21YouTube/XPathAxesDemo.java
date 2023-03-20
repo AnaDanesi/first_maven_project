@@ -16,8 +16,12 @@ public class XPathAxesDemo {
         driver.manage().window().maximize();
 
         //self
-        driver.findElement(By.xpath("//a[normalize-space()='Data Patterns (India']/self::a")).getText();
+        String text=driver.findElement(By.xpath("//a[normalize-space()='Data Patterns (India']/self::a")).getText();
+        System.out.println(text);
 
+        //parent
+        text= driver.findElement(By.xpath("//a[normalize-space()='Data Patterns (India']/parent::td")).getText();
+        System.out.println(text);
 
 
     }
