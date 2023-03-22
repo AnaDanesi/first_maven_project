@@ -30,7 +30,7 @@ public class ConditionalCommands {
         driver.get("https://demo.nopcommerce.com/register");
         driver.manage().window().maximize();
 
-        //isDisplayed()
+        //isDisplayed() - for logo element
 
         //WebElement logo=driver.findElement(By.xpath("//img[@alt='nopCommerce demo store']"));
         //System.out.println("display status of logo:  "+logo.isDisplayed());
@@ -38,7 +38,10 @@ public class ConditionalCommands {
         boolean status=driver.findElement(By.xpath("//img[@alt='nopCommerce demo store']")).isDisplayed();
         System.out.println(status);
 
-
+        //isDisplayed() and isEnabled() - for search box
+        WebElement searchbox=driver.findElement(By.xpath("//input[@id='small-searchterms']"));
+        System.out.println("Display status:  "+searchbox.isDisplayed());
+        System.out.println("Display status:  "+searchbox.isEnabled());
 
 
     }
