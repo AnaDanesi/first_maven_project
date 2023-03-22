@@ -31,7 +31,6 @@ public class ConditionalCommands {
         driver.manage().window().maximize();
 
         //isDisplayed() - for logo element
-
         //WebElement logo=driver.findElement(By.xpath("//img[@alt='nopCommerce demo store']"));
         //System.out.println("display status of logo:  "+logo.isDisplayed());
         //or  this:
@@ -43,6 +42,27 @@ public class ConditionalCommands {
         System.out.println("Display status:  "+searchbox.isDisplayed());
         System.out.println("Display status:  "+searchbox.isEnabled());
 
+        //isSelected()
+        WebElement male_rd=driver.findElement(By.xpath("//input[@id='gender-male']"));
+        WebElement female_rd=driver.findElement(By.xpath("//input[@id='gender-female']"));
 
+        //Before selection
+        System.out.println("Before selection........");
+        System.out.println(male_rd.isSelected()); //false
+        System.out.println(female_rd.isSelected()); //false
+
+        //After selection of male radio button
+        male_rd.click();
+        System.out.println("After selection of male radio button:.....");
+        System.out.println(male_rd.isSelected()); //true
+        System.out.println(female_rd.isSelected()); //false
+
+        //After selection of female radio button
+        female_rd.click();
+        System.out.println("After selection of male radio button:.....");
+        System.out.println(male_rd.isSelected()); // false
+        System.out.println(female_rd.isSelected()); // true
+
+        //we cant click the 2 buttons at the same time! remember
     }
 }
