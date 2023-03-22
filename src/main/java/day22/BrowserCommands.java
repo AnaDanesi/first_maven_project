@@ -1,6 +1,7 @@
 package day22;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -15,7 +16,7 @@ quit()
  */
 public class BrowserCommands {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
 
@@ -27,7 +28,13 @@ public class BrowserCommands {
         driver.get("https:/opensource-demo.orangehrmlive.com/");
         driver.manage().window().maximize();
 
-        driver.close();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//a[normalize-space()='OrangeHRM, Inc']")).click();
+        Thread.sleep(5000);
+        //driver.close(); //single browser window (the one i open with driver.get)
+
+        driver.quit(); //all browser windows
+
 
 
     }
