@@ -31,7 +31,15 @@ public class ConditionalCommands {
         driver.manage().window().maximize();
 
         //isDisplayed()
-        WebElement logo=driver.findElement(By.xpath("//img[@alt='nopCommerce demo store']"));
-        System.out.println("display status of logo:  "+logo.isDisplayed());
+
+        //WebElement logo=driver.findElement(By.xpath("//img[@alt='nopCommerce demo store']"));
+        //System.out.println("display status of logo:  "+logo.isDisplayed());
+        //or  this:
+        boolean status=driver.findElement(By.xpath("//img[@alt='nopCommerce demo store']")).isDisplayed();
+        System.out.println(status);
+
+
+
+
     }
 }
