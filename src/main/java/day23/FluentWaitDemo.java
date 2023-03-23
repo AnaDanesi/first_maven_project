@@ -16,21 +16,8 @@ import java.util.function.Function;
 
 /*Fluent wait
 ------
- // Waiting 30 seconds for an element to be present on the page, checking
-   // for its presence once every 5 seconds.
-
- Wait<WebDriver> mywait = new FluentWait<WebDriver>(driver)
-       .withTimeout(Duration.ofSeconds(30L))
-       .pollingEvery(Duration.ofSeconds(5L))
-       .ignoring(NoSuchElementException.class);
-
-
-   WebElement foo = mywait.until(new Function<WebDriver, WebElement>() {
-     public WebElement apply(WebDriver driver) {
-       return driver.findElement(By.id("foo"));
-     }
-   });
-
+almost the same as explicit.
+difference with explicit, in explicit condition we have timeout, in fluent we have polling and ignoring.
 */
 public class FluentWaitDemo {
 
@@ -45,11 +32,6 @@ public class FluentWaitDemo {
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 
         //declaration
-        /*Wait<WebDriver> mywait = new FluentWait<WebDriver>(driver)
-                .withTimeout(Duration.ofSeconds(50))
-                .pollingEvery(Duration.ofSeconds(10))
-                .ignoring(NoSuchElementException.class);*/
-
         FluentWait mywait = new FluentWait(driver);
         mywait.withTimeout(Duration.ofSeconds(30));
         mywait.pollingEvery(Duration.ofSeconds(5));
