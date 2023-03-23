@@ -11,12 +11,12 @@ import java.time.Duration;
 ----------
 Adv:
 1) single time/one statement
-2) it will not wait till maximum time if the element is availble
+2) it will not wait till maximum time if the element is available
 3) Applicable for all the elements
 4) easy to use
 
-Disadvantge:
-1) if the time is not suffitient then you will get exception
+Disadvantage:
+1) if the time is not sufficient then you will get exception
 
 
  */
@@ -35,6 +35,6 @@ public class ImplicitWait {
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 
         driver.findElement(By.xpath("//input[@placeholder='Username']")).sendKeys("Admin");
-
+        driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("admin123");
     }
 }
