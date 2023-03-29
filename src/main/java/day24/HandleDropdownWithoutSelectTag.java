@@ -36,7 +36,7 @@ public class HandleDropdownWithoutSelectTag {
         //Using normal for loop
         /*for (int i=0;i< drop_options.size();i++) {
             System.out.println(drop_options.get(i).getText()); //Web Development,jQuery,Bootstrap,HTML,CSS,Angular,Programming Languages,Java,C#,Python,Databases,MySQL,Oracle,MS SQL Server
-        }*/
+        }
 
         //Select options from dropdown
         for (int i=0;i<drop_options.size();i++) {
@@ -44,7 +44,15 @@ public class HandleDropdownWithoutSelectTag {
 
             if (drop_option.equals("Java") || drop_option.equals("Python")) {
                 drop_options.get(i).click();
-                 }
+                 }   //if you have only one, put break in the end.
+        }*/
+
+        //using enhanced for loop, easier
+        for (WebElement drop_option:drop_options) {
+            String text=drop_option.getText();
+            if (text.equals("Java") || text.equals("Python")) {
+                drop_option.click();
+            }
         }
 
 
