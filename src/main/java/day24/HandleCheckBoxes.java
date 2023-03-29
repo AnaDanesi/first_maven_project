@@ -66,7 +66,9 @@ public class HandleCheckBoxes {
             checkboxes.get(i).click();
         }*/
 
-        for(int i=0;i<3;i++) {
+        //clear/uncheck checkboxes
+        //using normal for loop
+        /*for(int i=0;i<3;i++) {
             checkboxes.get(i).click();
         }
         Thread.sleep(4000);
@@ -74,7 +76,21 @@ public class HandleCheckBoxes {
             if (checkboxes.get(i).isSelected()) {
                 checkboxes.get(i).click();
             }
+        }*/
+
+        //using for each loop
+        for(int i=0;i<3;i++) {
+            checkboxes.get(i).click();
         }
+        Thread.sleep(4000);
+
+        for (WebElement chbox:checkboxes) {
+            if (chbox.isSelected()) {
+                chbox.click();
+            }
+        }
+
+
     }
 
 }
