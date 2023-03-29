@@ -12,7 +12,7 @@ import java.util.List;
 
 public class HandleCheckBoxes {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
         ChromeOptions options=new ChromeOptions();
@@ -32,12 +32,49 @@ public class HandleCheckBoxes {
         List<WebElement> checkboxes=driver.findElements(By.xpath("//input[@class='form-check-input' and @type='checkbox']"));
         System.out.println("total number of checkboxes= "+checkboxes.size()); //7
 
-        //select all the checkboxes
-        for(int i=0;i<checkboxes.size();i++) {
+        //select all the checkboxes (2 ways)
+        /*for(int i=0;i<checkboxes.size();i++) {
             checkboxes.get(i).click();
         }
 
+        for(WebElement chbox:checkboxes) {
+            chbox.click();
+        }*/
 
+        //select las 2 checkboxes
+        //total number of checkboxes-how many checkboxes to be selected=starting index
+        /*for (int i=5;i< checkboxes.size();i++) {
+            checkboxes.get(i).click();
+        }*/
+
+        //select first 2 checkboxes (we cannot do enhanced for loop because we depend on the index
+        /*for (int i=0;i<2;i++) {
+            checkboxes.get(i).click();
+        }*/
+        // or for(int i=0;i<checkboxes.size();i++) {
+          /*  if (i < 2) {
+                checkboxes.get(i).click();
+            }
+        }*/
+
+        //clear/uncheck checkboxes
+        /*for(int i=0;i<checkboxes.size();i++) {
+            checkboxes.get(i).click();
+        }
+        Thread.sleep(4000);
+        for(int i=0;i<checkboxes.size();i++) {
+            checkboxes.get(i).click();
+        }*/
+
+        for(int i=0;i<3;i++) {
+            checkboxes.get(i).click();
+        }
+        Thread.sleep(4000);
+        for(int i=0;i<checkboxes.size();i++) {
+            if (checkboxes.get(i).isSelected()) {
+                checkboxes.get(i).click();
+            }
+        }
     }
 
 }
