@@ -11,6 +11,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.time.Duration;
 import java.util.List;
 
+/*Auto suggest dropdown(dynamic)
+*/
 public class AutoSuggestDropdown {
 
     public static void main(String[] args) throws InterruptedException {
@@ -32,6 +34,18 @@ public class AutoSuggestDropdown {
 
         List<WebElement> list=driver.findElements(By.xpath("//li[@class='sbct']"));
         System.out.println("Number of suggestions:  "+list.size());
+
+        //select a suggestion from the list
+        for (int i=0;i<list.size();i++){
+            String text=list.get(i).getText(); //it returns the 11 suggestions with system.out.println
+            if (text.equals("selenium java")){ //capturing one element
+                list.get(i).click();
+                break;
+            }
+
+        }
+
+
 
     }
 
