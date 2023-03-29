@@ -24,8 +24,12 @@ public class HandleCheckBoxes {
         driver.manage().window().maximize();
 
         //select specific checkbox (only one)
+        //driver.findElement(By.xpath("//input[@id='monday']")).click();
 
-        driver.findElement(By.xpath("//input[@id='monday']")).click();
+        //select all the checkboxes
+        //total number of checkboxes
+
+
 
     }
 
