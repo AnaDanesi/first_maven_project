@@ -34,7 +34,7 @@ public class Assignment1 {
         driver.findElement(By.xpath("//textarea[@id='sb_form_q']")).sendKeys("chat gpt");
         Thread.sleep(3000);
 
-        List<WebElement> list=driver.findElements(By.xpath("//ul[@class='sa_drw']/li"));
+        List<WebElement> list=driver.findElements(By.xpath("//ul[@id='sa_ul']/li"));
         System.out.println("Number of suggestions:  "+list.size());
 
         //select a suggestion from the list
