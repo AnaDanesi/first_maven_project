@@ -9,6 +9,15 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.time.Duration;
 
 /*
+-------
+frames/iframe
+
+driver.switchTo().frame(name/id)
+driver.switchTo().frame(WebElement)
+driver.switchTo().frame(index)
+
+driver.switchTo().defaultContent();
+
 packageListFrame
 packageFrame
 classFrame
