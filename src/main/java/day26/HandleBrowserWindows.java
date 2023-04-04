@@ -21,6 +21,17 @@ getWindowHandles()- returns id's of multiple windows
 driver.switchTo().window(window id)
 
 driver.switchTo().window(window id).getTitle()
+
+many browser windows opened
+----------------------------------------------
+close() - close single browser window which is focud by driver.
+quit() - close all the browser windows which are currently opened
+
+3 types of switching commands
+---
+1) driver.switchTo().alert()
+2)  driver.switchTo().frame()
+3) driver.switchTo().window()
  */
 
 public class HandleBrowserWindows {
@@ -39,11 +50,12 @@ public class HandleBrowserWindows {
 
         driver.findElement(By.xpath("//a[normalize-space()='OrangeHRM, Inc']")).click();
 
-        //Approach1
-
         //capture id's for browser windows
         Set<String> windowIDs=driver.getWindowHandles();   //we have stored 2 window id, with set we cant use the get method and individual values
-        List <String>windowIDsList=new ArrayList(windowIDs);  //we convert set to list collection
+
+        //Approach1 (2 browser windows only) - using List colelction
+
+        /*List <String>windowIDsList=new ArrayList(windowIDs);  //we convert set to list collection
 
         String parentWindowID=windowIDsList.get(0);
         String childWindowID=windowIDsList.get(1);
@@ -57,6 +69,25 @@ public class HandleBrowserWindows {
         driver.findElement(By.xpath("//input[@placeholder='Username']")).sendKeys("anabella");
 
 
+
+        //Approach2 (from 2 window browsers) - using loops
+
+        for (String winID:windowIDs) {
+            String title=driver.switchTo().window(winID).getTitle();
+            if (title.equals("OrangeHRM HR Software | Free & Open Source HR Software | HRMS | HRIS | OrangeHRM")){
+                driver.findElement(By.xpath("//div[@class='d-flex web-menu-btn']//li[1]//a[1]")).click();
+            }
+        }
+         */
+
+        //Closing specific browser windows based on our choice
+
+        for (String winID:windowIDs) {
+            String title=driver.switchTo().window(winID).getTitle();
+            if (title.equals("OrangeHRM HR Software | Free & Open Source HR Software | HRMS | HRIS | OrangeHRM")){
+                driver.findElement(By.xpath("//div[@class='d-flex web-menu-btn']//li[1]//a[1]")).click();
+            }
+        }
 
 
     }
