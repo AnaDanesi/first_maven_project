@@ -24,7 +24,7 @@ driver.switchTo().window(window id).getTitle()
 
 many browser windows opened
 ----------------------------------------------
-close() - close single browser window which is focud by driver.
+close() - close single browser window which is focused by driver.
 quit() - close all the browser windows which are currently opened
 
 3 types of switching commands
@@ -81,14 +81,30 @@ public class HandleBrowserWindows {
          */
 
         //Closing specific browser windows based on our choice
+        // 1-x  2-y  3-z  4-a  5-b
 
-        for (String winID:windowIDs) {
+        /*for (String winID:windowIDs) {
             String title=driver.switchTo().window(winID).getTitle();
-            if (title.equals("OrangeHRM HR Software | Free & Open Source HR Software | HRMS | HRIS | OrangeHRM")){
-                driver.findElement(By.xpath("//div[@class='d-flex web-menu-btn']//li[1]//a[1]")).click();
+            if (title.equals("x") || title.equals("y")  ||title.equals("z")){
+                driver.close();
             }
         }
 
+        //close parent window
+        for (String winID:windowIDs) {
+            String title = driver.switchTo().window(winID).getTitle();
+            if (title.equals("OrangeHRM")) {
+                driver.close();
+            }
+        }*/
+
+        //close child window
+        for (String winID:windowIDs) {
+            String title = driver.switchTo().window(winID).getTitle();
+            if (title.equals("OrangeHRM HR Software | Free & Open Source HR Software | HRMS | HRIS | OrangeHRM")) {
+                driver.close();
+            }
+        }
 
     }
 }
