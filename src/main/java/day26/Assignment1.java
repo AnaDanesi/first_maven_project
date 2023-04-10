@@ -30,13 +30,14 @@ public class Assignment1 {
 
         driver.findElement(By.xpath("//*[@id=\"Wikipedia1_wikipedia-search-input\"]")).sendKeys("automation");
         driver.findElement(By.xpath("//input[@type='submit']")).click();
-        List<WebElement> list=driver.findElement(By.xpath("//div[@class='wikipedia-search-results']//div")).getText();
+        List<WebElement> list=driver.findElements(By.xpath("//div[@class='wikipedia-search-results']//div"));
 
+        System.out.println("number of results: "+list.size()); //5
 
-        System.out.println("results:  "+list);
-
-
-
-
+        //Print all the options from dropdown - looping statement normal or enhanced
+        //Using normal for loop
+        for (int i=0;i< list.size();i++) {
+            System.out.println(list.get(i).getText());  //Automation, Automation bias, Automation Master, Automation Studio, Automation of the London Underground
+        }
     }
 }
