@@ -8,6 +8,30 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 
+/*
+Actions - class provided by selenium webdriver.
+
+build() - create an action
+perform() - can complete the action
+
+
+<input  id='abc' > testing</input>      testing - inner text
+findElement(Loc).getText()  ----- testing
+findElement(Loc).getAttribute('value')   - return nothing
+
+<input id='abc' value='testing' />       no innertext
+findElement(Loc).getText()   - return nothing
+findElement(Loc).getAttribute('value') --- testing
+
+
+getText() --- returns inner text of the element
+
+getAttribute("value") --- testing
+getAttribute("id") ------ abc
+
+build().perform()
+perfom()
+ */
 public class DoubleClickDemo {
 
     public static void main(String[] args) {
@@ -22,7 +46,7 @@ public class DoubleClickDemo {
 
         driver.switchTo().frame("iframeResult"); // switch to frame
 
-        WebElement f1=driver.findElement(By.xpath("//input[@id='field1']"));
+        WebElement f1=driver.findElement(By.xpath("//input[@value='Hello World!']"));
         f1.clear();
         f1.sendKeys("Welcome");
 
@@ -33,7 +57,7 @@ public class DoubleClickDemo {
         act.doubleClick(button).perform(); // double click action
 
         //validation
-        WebElement f2=driver.findElement(By.xpath("//input[@id='field2']"));
+        WebElement f2=driver.findElement(By.xpath("//body/input[1]"));
 
         //String copiedtext=f2.getText();  // will not work
         String copiedtext=f2.getAttribute("value");  // this will work
