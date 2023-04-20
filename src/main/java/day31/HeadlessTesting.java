@@ -35,6 +35,18 @@ public class HeadlessTesting {
         opts.addArguments("--remote-allow-origins=*");
         WebDriver driver=WebDriverManager.chromedriver().capabilities(opts).create();*/
 
+        //////////    edge browser    /////////////
+
+        //Appraoch1
+	    /*EdgeOptions options=new EdgeOptions();
+		options.setHeadless(true);
+
+		options.addArguments("--remote-allow-origins=*");
+		WebDriverManager.edgedriver().setup();
+		WebDriver driver=new EdgeDriver(options);
+		*/
+
+
         //Appraoch 2
         EdgeOptions options=new EdgeOptions();
         options.setHeadless(true);
