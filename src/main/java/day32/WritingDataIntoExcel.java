@@ -21,8 +21,8 @@ public class WritingDataIntoExcel {
 
         XSSFSheet sheet=workbook.createSheet();
 
-        //Creating rows, cells and update data without loop
-		XSSFRow row1=sheet.createRow(0);
+        //Creating rows, cells and update data without loop (for small data)
+		/*XSSFRow row1=sheet.createRow(0);
 
 		row1.createCell(0).setCellValue("welcome");
 		row1.createCell(1).setCellValue("12345");
@@ -33,9 +33,9 @@ public class WritingDataIntoExcel {
 		row2.createCell(0).setCellValue("abc");
 		row2.createCell(1).setCellValue("4567");
 		row2.createCell(2).setCellValue("testing");
+        */
 
-
-        //creating rows, cells and update data using loop
+        //creating rows, cells and update data using loop (for large data)
 
         Scanner sc=new Scanner(System.in);
 
@@ -45,7 +45,7 @@ public class WritingDataIntoExcel {
 
             for(int c=0;c<2;c++)
             {
-                //currentrow.createCell(c).setCellValue("welcome");
+                //currentrow.createCell(c).setCellValue("welcome"); //welcome in all the cells
 
                 System.out.println("Enter a value:");
                 String value=sc.next();
