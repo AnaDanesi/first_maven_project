@@ -26,6 +26,19 @@ public class FixedDepositCalculator {
         driver.get("https://www.moneycontrol.com/fixed-income/calculator/state-bank-of-india-sbi/fixed-deposit-calculator-SBI-BSB001.html");
         driver.manage().window().maximize();
 
+        //login (not in the course)
+
+        driver.switchTo().frame("myframe");
+        WebElement username=driver.findElement(By.xpath("//*[@id=\"email\"]"));
+        username.sendKeys("pualani.concreto@gmail.com");
+
+        WebElement password=driver.findElement(By.xpath("//*[@id=\"pwd\"]"));
+        password.sendKeys("Ana*123456"); //demo
+
+        driver.findElement(By.xpath("//*[@id=\"ACCT_LOGIN_SUBMIT\"]")).click();
+
+
+        //excel file
         String file = System.getProperty("user.dir") + "/testdata/caldata.xlsx";
 
         int rows = ExcelUtils.getRowCount(file, "Sheet1");
