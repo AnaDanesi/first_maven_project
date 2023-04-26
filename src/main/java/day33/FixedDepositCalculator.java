@@ -21,21 +21,33 @@ public class FixedDepositCalculator {
         options.addArguments("--remote-allow-origins=*");
         WebDriver driver = new ChromeDriver(options);
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         driver.get("https://www.moneycontrol.com/fixed-income/calculator/state-bank-of-india-sbi/fixed-deposit-calculator-SBI-BSB001.html");
-        driver.manage().window().maximize();
 
         //login (not in the course)
 
         driver.switchTo().frame("myframe");
-        WebElement username=driver.findElement(By.xpath("//*[@id=\"email\"]"));
+        WebElement username=driver.findElement(By.xpath("//div[@class='textfieldbox PR']//input[@id='email']"));
         username.sendKeys("pualani.concreto@gmail.com");
 
-        WebElement password=driver.findElement(By.xpath("//*[@id=\"pwd\"]"));
-        password.sendKeys("Ana*123456"); //demo
+        WebElement password=driver.findElement(By.xpath("//div[@class='textfieldbox PR usepwd']//input[@id='pwd']"));
+        password.sendKeys("Ana*123456");
 
-        driver.findElement(By.xpath("//*[@id=\"ACCT_LOGIN_SUBMIT\"]")).click();
+        driver.findElement(By.xpath("//button[@id='ACCT_LOGIN_SUBMIT']")).click();
+
+        //accept terms and conditions
+
+        Thread.sleep(5000);
+
+        driver.switchTo().defaultContent();
+        driver.switchTo().frame("myframe");
+
+        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[4]/div[2]/ul[1]/li[1]/div[1]/input[1]")).click();
+        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[4]/div[2]/ul[1]/li[2]/div[1]/input[1]")).click();
+        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[4]/div[2]/ul[1]/li[3]/div[1]/input[1]")).click();
+
+        driver.findElement(By.xpath("//div[@id='id_login']//button[@id='submit']")).click();
 
 
         //excel file
