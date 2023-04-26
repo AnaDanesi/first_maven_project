@@ -49,6 +49,7 @@ public class FixedDepositCalculator {
 
         driver.findElement(By.xpath("//div[@id='id_login']//button[@id='submit']")).click();
 
+        driver.switchTo().defaultContent();
 
         //excel file
         String file = System.getProperty("user.dir") + "/testdata/caldata.xlsx";
