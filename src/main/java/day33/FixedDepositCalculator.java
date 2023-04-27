@@ -68,7 +68,7 @@ public class FixedDepositCalculator {
 
 
             //pass data to the app
-            driver.findElement(By.id("principal")).sendKeys(princ);
+            driver.findElement(By.xpath("//input[@id='principal']")).sendKeys(princ);
             driver.findElement(By.id("interest")).sendKeys(rateofinterest);
             driver.findElement(By.id("tenure")).sendKeys(per1);
 
