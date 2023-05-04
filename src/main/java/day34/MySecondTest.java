@@ -11,7 +11,7 @@ import java.time.Duration;
 
 public class MySecondTest {
     WebDriver driver; //we create as a global variable
-    @Test
+    @Test(priority = 10)
     void openApp() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options=new ChromeOptions();
@@ -21,13 +21,13 @@ public class MySecondTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
     }
-    @Test
+    @Test(priority = 50)
     void login() {
         driver.findElement(By.name("username")).sendKeys("Admin");
         driver.findElement(By.name("password")).sendKeys("admin123");
         driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
     }
-    @Test
+    @Test(priority = 100)
     void close() {
         driver.quit();
     }

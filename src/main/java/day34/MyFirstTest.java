@@ -40,7 +40,7 @@ Test case
 2) Login
 3) close
 
-priority - control the order of execution
+priority - control the order of execution,  if not it is alphabetical
 
 If you do not add @Test annotation then testng will not execute that method.
 
