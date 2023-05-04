@@ -43,14 +43,8 @@ Test case
 priority - control the order of execution,  if not it is alphabetical
 
 If you do not add @Test annotation then testng will not execute that method.
-
-XML File
-----
-1) Create manually
-2) Generate automatically
-
-
  */
+
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
