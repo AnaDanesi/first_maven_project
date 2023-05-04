@@ -5,6 +5,7 @@
     <test name="Test" >
         <classes>
             <class name="day34.MySecondTest" />
+            <class name="day34.MyThirdTest" />
         </classes>
     </test>
 
