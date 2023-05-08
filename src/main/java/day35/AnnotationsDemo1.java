@@ -33,12 +33,6 @@ TC1
 5) Advanced search  -- @Test
 6) Logout
 
-TC1
-----
-1) Login - @BeforeClass
-2) Search  - @Test
-3) Advanced search  - @Test
-4) Logout  - @AfterClass
  */
 
 import org.testng.annotations.*;
@@ -54,12 +48,12 @@ public class AnnotationsDemo1 {
         System.out.println("Login...");
     }
 
-    @Test
+    @Test (priority = 1)
     void search() {
         System.out.println("Search test...");
     }
 
-    @Test
+    @Test (priority = 2)
     void advancedsearch() {
         System.out.println("Advanced search...");
     }
