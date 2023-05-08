@@ -2,6 +2,14 @@ package day34;
 
 import org.testng.annotations.Test;
 
+/*
+XML File
+----
+1) Create manually
+2) Generate automatically
+
+ */
+
 public class MyThirdTest {
 
     @Test(priority = 1)
