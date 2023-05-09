@@ -3,6 +3,27 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+/*
+
+Assertions
+----------
+validations
+
+Hard assertions
+----
+access though 'Assert' class
+all methods are static
+if hard assertion got failed then rest of the statement will not be executed.
+
+Soft assertions
+-----------
+access through 'SoftAssert' object
+
+SoftAssert sa=new SoftAssert();
+sa.assertTrue()
+
+if soft assertion got failed then rest of the statements still execute.
+ */
 public class HardVsSoftAssertions {
 
    // @Test
