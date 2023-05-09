@@ -23,6 +23,7 @@ sa.assertTrue()
 
 if soft assertion got failed then rest of the statements still execute.
  */
+import org.testng.Assert;
 import org.testng.annotations.*;
 public class DependentMethods {
     @Test(priority=1)
@@ -34,13 +35,14 @@ public class DependentMethods {
     @Test(priority=2, dependsOnMethods= {"openapp"})
     void login()
     {
-        Assert.assertTrue(true);
+        Assert.assertTrue(false);  //if we put false, login will fail and the test too with the dependency
+
     }
 
     @Test(priority=3, dependsOnMethods= {"login"})
     void search()
     {
-        Assert.assertTrue(false);
+        Assert.assertTrue(true);
     }
 
     @Test(priority=4, dependsOnMethods= {"login","search"})
