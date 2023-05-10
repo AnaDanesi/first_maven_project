@@ -38,14 +38,14 @@ public class DataProviderDemo {
         driver.close();
     }
 
-    @DataProvider(name = "dp", indices = {0, 1, 4})
+    @DataProvider(name = "dp", indices={0,4})
     String[][] loginData() {
         String data[][] = { //2 dimension array to avoid excel for now
                 {"abc@gmail.com", "test123"},
                 {"pavanol@gmail.com", "test@123"},
                 {"pavanoltraining@gmail.com", "test3"},
-                {"pavanoltraining@gmail.com", "test@123"},
-                {"pavanoltraining@gmail.com", "test@123"}
+                {"pualani.concreto@gmail.com", "C5wk8JFBE@iuvQ"},
+                {"pualani.concreto@gmail.com", "C5wk8JFBE@iuvQ"}
         };
 
         return data;
