@@ -25,7 +25,7 @@ step3) pass browser name parameter from the xml to setup() method
 step4 ) execute test case on chrome & edge ( serial execution)
 step5 ) execute test case on chrome & edge ( parallel execution)
 
-
+I cant test this, we have to test the xml file. because it depends on it
  */
 import io.github.bonigarcia.wdm.WebDriverManager;
 
