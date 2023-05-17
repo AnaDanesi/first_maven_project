@@ -9,12 +9,34 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+/*
+Day-39
+-------
+Page object Model pattern
+---------------
+
+WebElement ele=driver.findElement(By.id('xyz'));
+
+
+By loc=By.id('xyz');
+
+
+driver.finElement(loc).sendKeys()
+
+
+2 approaches to create page object classes
+-----------------------------
+1) Without using Page Factory(Normal appraoch)
+2) Using Page Factory
+
+ */
+
 import java.time.Duration;
 
 public class LoginTest {
     WebDriver driver;
-    LoginPage lp;
-    //LoginPage2 lp;
+    //LoginPage lp;
+    LoginPage2 lp;
 
     @BeforeClass
     void setup() throws InterruptedException
@@ -33,8 +55,8 @@ public class LoginTest {
     @Test(priority=1)
     void testLogo()
     {
-        lp=new LoginPage(driver);
-        //lp=new LoginPage2(driver);
+       //lp=new LoginPage(driver);
+        lp=new LoginPage2(driver);
 
         Assert.assertEquals(lp.checkLogoPresence(), true);
     }
