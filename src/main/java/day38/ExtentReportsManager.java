@@ -1,4 +1,13 @@
 package day38;
+/*
+extent report
+----------
+1) add dependecny in pom.xml
+2) create test case
+3) create listener class
+4) create xml file
+
+ */
 
 import com.aventstack.extentreports.ExtentReports;
 import org.testng.ITestContext;
