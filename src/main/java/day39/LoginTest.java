@@ -26,7 +26,7 @@ driver.finElement(loc).sendKeys()
 
 2 approaches to create page object classes
 -----------------------------
-1) Without using Page Factory(Normal appraoch)
+1) Without using Page Factory(Normal approach)
 2) Using Page Factory
 
  */
