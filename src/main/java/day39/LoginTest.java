@@ -3,6 +3,7 @@ package day39;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -19,7 +20,9 @@ public class LoginTest {
     void setup() throws InterruptedException
     {
         WebDriverManager.chromedriver().setup();
-        driver=new ChromeDriver();
+        ChromeOptions options=new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        driver=new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
