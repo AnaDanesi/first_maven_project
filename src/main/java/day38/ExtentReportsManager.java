@@ -1,16 +1,16 @@
 package day38;
 
+import com.aventstack.extentreports.ExtentReports;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-public class ExtentReports implements ITestListener
+public class ExtentReportsManager implements ITestListener
 {
     public ExtentSparkReporter sparkReporter;  // UI of the report
     public ExtentReports extent;  //populate common info on the report
